@@ -1,0 +1,14 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /xsgl
+
+spring:
+  profiles:
+    active: dev
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+
+
+
