@@ -6,9 +6,31 @@ server:
 spring:
   profiles:
     active: dev
+  jpa:
+    show-sql: true
 
 mybatis:
   mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com.example.fbj.demo.Model
+
+#打印运行时sql语句到控制台
+#=========== 日志配置·简易（spring boot已经集成logback日志）=========
+logging:
+  level:
+  #controller层日志 WARN级别输出
+      com.example.fbj.demo.Controller : warn
+  #Dao层 sql日志 DEBUG级别输出
+      com.example.fbj.demo.Dao : debug
+  file: info.log
+  pattern:
+    console: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+    file: "%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n"
+
+
+
+
+
+
 
 
 
